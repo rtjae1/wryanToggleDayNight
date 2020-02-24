@@ -6,6 +6,11 @@
 /* ~~~~~~~~~~~~~~ */
 /* center content */
 /* ~~~~~~~~~~~~~~ */
+body.night {
+  background: var(--secondaryColor);
+  color: var(--primaryColor);
+  transition: 0.5s;
+}
 .content {
   /* border: solid black; */
   grid-area: c;
@@ -14,63 +19,36 @@
   left: 50%;
   margin-right: -50%;
   transform: translate(-50%, -50%);
+  text-align: justify;
 }
-.flag {
-  /* border: solid black; */
-  width: 75vw;
+.toggle {
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: var(--primaryColor);
+  border: 2px solid var(--secondaryColor);
+  height: 20px;
+  width: 45px;
+  cursor: pointer;
+  border-radius: 20px;
+  transition: 0.5s;
 }
-.flag img {
-  /* border: solid black; */
-  height: 100%;
+.toggle.active {
+  background: var(--secondaryColor);
+  border: 2px solid var(--primaryColor);
 }
-.flag-images {
-  /* border: solid black; */
-  height: 50px;
-  display: flex;
-  justify-content: space-around;
-  margin-bottom: 25px;
+.toggle::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 16px;
+  height: 16px;
+  background: var(--secondaryColor);
+  border-radius: 50%;
+  transition: 0.5s;
 }
-.bars {
-  display: inline-block;
-  width: 75vw;
-}
-.bar {
-  /* border: solid black; */
-  background-color: var(--secondaryColor);
-  color: var(--primaryColor);
-  height: 50px;
-  margin: 10px;
-  font-size: 15px;
-  line-height: 50px;
-  text-align: center;
-}
-p span {
-  display: inline-block;
-  color: var(--primaryColor);
-  transition: 1s;
-  transform: rotateY(0deg);
-}
-p:hover span {
-  transform: rotateY(360deg);
-}
-p:hover span:nth-child(1) {
-  transition-delay: .14s;
-}
-p:hover span:nth-child(2) {
-  transition-delay: .12s;
-}
-p:hover span:nth-child(3) {
-  transition-delay: .10s;
-}
-p:hover span:nth-child(4) {
-  transition-delay: .08s;
-}
-p:hover span:nth-child(4) {
-  transition-delay: .06s;
-}
-p:hover span:nth-child(5) {
-  transition-delay: .04s;
-}
-p:hover span:nth-child(6) {
-  transition-delay: .02s;
+.toggle.active::before {
+  left: 25px;
+  background: var(--primaryColor);
 }

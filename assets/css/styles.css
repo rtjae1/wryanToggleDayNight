@@ -1,5 +1,5 @@
 /* ~~~~~~~~~~~~~~ */
-/* color variables */ 
+/* color variables */
 /* ~~~~~~~~~~~~~~ */
 :root {
   --primaryColor: #444444;
@@ -41,10 +41,14 @@ html {
   right: 0;
   top: 0;
   color: var(--primaryColor);
-  background-color: var(--secondaryColor);
+  background: var(--secondaryColor);
   overflow-x: hidden;
   transition: 0.5s;
   font-size: 2rem;
+}
+.overlay.active {
+  color: var(--secondaryColor);
+  background: var(--primaryColor);
 }
 /* ~~~~~~~~~~~~~~ */
 /* position of the navigation links inside the overlay */
